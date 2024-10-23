@@ -43,7 +43,7 @@ Strint::~Strint() {
 }
 
 // assignment
-Strint& Strint::operator=(const Strint &&other) {
+Strint& Strint::operator=(const Strint &other) {
     cout << "assignment operator called" << endl;
     if (this == &other) {
         return *this;

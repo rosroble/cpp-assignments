@@ -80,5 +80,10 @@ int main() {
     cout << "vector init" << endl;
     vector_init();
     cout << endl;
-    
+
+    cout << "assignment operator" << endl;
+    Strint ass1 = {2, "two"};
+    Strint ass2 = {4, "four"};
+    ass1 = ass2;
+    cout << endl;
 }

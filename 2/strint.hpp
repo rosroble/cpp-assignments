@@ -14,7 +14,7 @@ namespace lab2 {
             Strint(Strint &&s);
             ~Strint();
 
-            Strint& operator=(const Strint &&other);
+            Strint& operator=(const Strint &other);
             Strint& operator=(Strint &&other) noexcept;
 
             void print_string();

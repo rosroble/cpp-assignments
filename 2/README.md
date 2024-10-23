@@ -160,7 +160,18 @@ destructor called
 Для каждого объекта из вектора вызывается конструктор по умолчанию.
 После выхода из функции все объекты уничтожаются.
 
-13. Выход из main
+13. Оператор перемещения
+
+```
+assignment operator
+parameterized constructor called
+parameterized constructor called
+assignment operator called
+```
+
+Вызывается оператор перемещения при присваивании в уже проинициализированную переменную.
+
+14. Выход из main
 
 ```
 destructor called
