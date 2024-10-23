@@ -79,7 +79,9 @@ Strint& Strint::operator=(Strint &&other) noexcept {
 }
 
 void Strint::print_string() {
-    cout << this->str << endl;
+    if (this->str != nullptr) {
+        cout << this->str << endl;
+    }
 }
 
 int Strint::get_int() {

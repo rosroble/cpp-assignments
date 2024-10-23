@@ -1,5 +1,6 @@
 #include "strint.hpp"
 #include <iostream>
+#include <vector>
 
 using namespace lab2;
 using namespace std;
@@ -21,6 +22,10 @@ Strint return_from_func() {
 Strint& return_from_func_ref() {
     static Strint s{2, "two"};
     return s;
+}
+
+vector<Strint> vector_init() {
+    return vector<Strint> (5);
 }
 
 int main() {
@@ -56,4 +61,24 @@ int main() {
     cout << "return from function ref" << endl;
     return_from_func_ref().print_string();  
     cout << endl;
+
+    cout << "move constructor: std::move" << endl;
+    Strint x{22, "twenty-two"};
+    Strint y = std::move(x);
+    x.print_string(); // should print nothing
+    y.print_string(); // should print twenty-two
+    cout << endl;
+
+    cout << "move constructor: temp value assignment" << endl;
+    Strint z = return_from_func(); // could be moved, but not guaranteed (RVO)
+    cout << endl;
+
+    cout << "move assignment" << endl;
+    y = std::move(z); // should call move assignment operator
+    cout << endl;
+
+    cout << "vector init" << endl;
+    vector_init();
+    cout << endl;
+    
 }
